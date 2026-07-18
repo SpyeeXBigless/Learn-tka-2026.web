@@ -1,0 +1,60 @@
+/* ============================================================
+   layout.css — header, nav, hero, benefit grid, footer
+   ============================================================ */
+header{
+  position:sticky; top:0; z-index:10;
+  background:var(--ink);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 28px;
+  border-bottom:2px solid var(--carrot);
+}
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand .logo-fold-small{ width:34px; height:34px; }
+.brand-text{ color:var(--text-on-ink); line-height:1.1; }
+.brand-text b{ font-family:'Fraunces',serif; font-size:16px; display:block; }
+.brand-text small{ color:var(--muted-on-ink); font-size:10.5px; letter-spacing:.08em; font-family:'IBM Plex Mono',monospace; }
+
+nav[aria-label="Navigasi utama"]{ display:flex; gap:4px; }
+nav button{
+  background:none; border:none; cursor:pointer;
+  color:var(--muted-on-ink);
+  font-family:'Inter',sans-serif; font-weight:600; font-size:13.5px;
+  padding:9px 16px; border-radius:999px;
+  transition:.2s;
+}
+nav button[aria-current="page"], nav button:hover{ background:rgba(241,101,30,.15); color:var(--text-on-ink); }
+nav button[aria-current="page"]{ color:var(--carrot); }
+
+main{ max-width:1080px; margin:0 auto; padding:52px 24px 100px; }
+
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em;
+  color:var(--teal); text-transform:uppercase; margin-bottom:14px;
+}
+.hero h1{ font-size:clamp(30px,4.4vw,48px); line-height:1.12; max-width:760px; }
+.hero p{ margin-top:18px; max-width:560px; font-size:16px; line-height:1.65; color:#4a4034; }
+.hero .accent{ color:var(--carrot); }
+
+.stat-row{ display:flex; gap:36px; margin-top:36px; flex-wrap:wrap; }
+.stat b{ font-family:'IBM Plex Mono',monospace; font-size:26px; color:var(--ink); display:block; }
+.stat span{ font-size:12px; color:#6b5f4d; }
+
+.section-label{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.1em;
+  color:var(--carrot); margin:64px 0 6px;
+}
+.section-title{ font-size:26px; margin-bottom:26px; }
+
+.benefit-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.benefit-card{
+  background:var(--parchment-2); border:1px solid #d6c69a;
+  padding:20px; border-radius:4px;
+}
+.benefit-card .num{ font-family:'IBM Plex Mono',monospace; color:var(--teal); font-size:12px; }
+.benefit-card h3{ font-size:17px; margin:10px 0 8px; }
+.benefit-card p{ font-size:13.5px; color:#5c5140; line-height:1.55; }
+
+.placeholder-view{ padding:120px 0; text-align:center; color:#6b5f4d; }
+.placeholder-view .mono{ color:var(--teal); font-size:13px; letter-spacing:.1em; }
+
+footer{ text-align:center; padding:30px; font-size:11.5px; color:#8a7d64; font-family:'IBM Plex Mono',monospace; }

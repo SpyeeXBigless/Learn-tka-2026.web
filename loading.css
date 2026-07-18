@@ -1,0 +1,65 @@
+/* ============================================================
+   loading.css — layar loading tema carrot
+   ============================================================ */
+#loading{
+  position:fixed; inset:0; z-index:100;
+  background:radial-gradient(ellipse at 50% 30%, #1c2536 0%, var(--ink) 70%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  transition:opacity .7s ease, visibility .7s ease;
+}
+#loading.hide{ opacity:0; visibility:hidden; pointer-events:none; }
+
+.marquee-wrap{
+  position:absolute; top:8%; left:0; width:100%;
+  overflow:hidden; white-space:nowrap;
+  border-top:1px solid rgba(241,101,30,.35);
+  border-bottom:1px solid rgba(241,101,30,.35);
+  padding:10px 0;
+}
+.marquee-track{
+  display:inline-block;
+  animation:scrollLeft 14s linear infinite;
+  color:var(--carrot);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13px;
+  letter-spacing:.12em;
+}
+.marquee-track span{ margin:0 3em; }
+@keyframes scrollLeft{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+.logo-fold{ width:88px; height:88px; margin-bottom:22px; opacity:0; animation:unfold .9s cubic-bezier(.2,.8,.2,1) .15s forwards; }
+@keyframes unfold{
+  0%{ opacity:0; transform:scale(.7) rotate(-8deg); }
+  100%{ opacity:1; transform:scale(1) rotate(0deg); }
+}
+
+.fall-title{
+  display:flex; justify-content:center; flex-wrap:wrap; gap:.05em;
+  font-size:clamp(20px,4vw,34px);
+  font-weight:600; color:var(--text-on-ink);
+  letter-spacing:.02em;
+  text-align:center;
+  max-width:90vw;
+}
+.fall-title span{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(-40px);
+  animation:fallDown .5s cubic-bezier(.34,1.4,.64,1) forwards;
+}
+@keyframes fallDown{ to{ opacity:1; transform:translateY(0); } }
+
+.loading-footnote{
+  margin-top:18px;
+  color:var(--carrot);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12.5px;
+  opacity:0;
+  animation:fadeIn .6s ease 1.8s forwards;
+  text-align:center;
+  padding:0 20px;
+}
+@keyframes fadeIn{ to{ opacity:1; } }
